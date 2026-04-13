@@ -32,9 +32,17 @@ public class Transaction {
 	public Account getFromAcc() {
 		return fromAcc;
 	}
+	
+	public void setFromAcc(Account fromAccount) {
+		this.fromAcc = fromAccount;
+	}
 
 	public Account getToAcc() {
 		return toAcc;
+	}
+	
+	public void setToAcc(Account toAccount) {
+		this.toAcc = toAccount;
 	}
 
 	public Double getTnxAmount() {

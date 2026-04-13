@@ -6,7 +6,6 @@ import com.bank.model.Account;
 
 public interface AccountRepository {
 	void displayAllAccounts(List<Account> accountList);
-	void addAccount(Account account);
-	
-	
+	Account addAccount();
+
 }

@@ -1,9 +1,12 @@
 package com.bank.repository;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import com.bank.enums.AccountType;
 import com.bank.model.Account;
+import com.bank.model.Transaction;
 
 public class AccountRepositoryImpl implements AccountRepository{
 
@@ -23,7 +26,7 @@ public class AccountRepositoryImpl implements AccountRepository{
 	}
 
 	@Override
-	public void addAccount(Account account) {
+	public Account addAccount() {
 		// TODO Auto-generated method stub
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter Account Holder Name: ");
@@ -33,10 +36,12 @@ public class AccountRepositoryImpl implements AccountRepository{
 		System.out.println("Enter Account Id: ");
 		String accId = scanner.nextLine();
 		System.out.println("Enter Account Type (Savings/Current/Loan): ");
-		String accType = scanner.nextLine();
+		AccountType accType = AccountType.valueOf( scanner.nextLine().toUpperCase());
 		System.out.println("Enter Account Balance: ");
 		double accBalance = scanner.nextDouble();
 		boolean accountStatus = true;
+		List<Transaction> transactionList = new ArrayList<>();
+		return new Account(accNumber,accHolderName,accId,accType,accBalance,accountStatus,transactionList);
 
 	}
 

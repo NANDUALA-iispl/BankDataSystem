@@ -70,4 +70,12 @@ public class Account {
 		this.transactionList = transactionList;
 	}
 
+	@Override
+	public String toString() {
+		return "Account [accNo=" + accNo + ", accHolderName=" + accHolderName + ", accId=" + accId + ", accType="
+				+ accType + ", accBalance=" + accBalance + ", accStatus=" + accStatus + ", transactionList="
+				+ transactionList + "]";
+	}
+	
+	
 }

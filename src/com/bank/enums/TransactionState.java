@@ -4,5 +4,8 @@ public enum TransactionState {
 	INITIATED,
 	VALIDATED,
 	PROCESSED,
-	COMPLETED
+	COMPLETED,
+	FAILED
 }
+
+

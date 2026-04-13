@@ -1,12 +1,14 @@
 package com.bank.repository;
 
-import java.nio.channels.Channel;
 import java.util.List;
 import java.util.Scanner;
 
+import com.bank.enums.Channel;
 import com.bank.enums.TransactionState;
 import com.bank.model.Account;
 import com.bank.model.Transaction;
+import com.bank.service.AccountService;
+import com.bank.service.AccountServiceImpl;
 
 public class TransactionRepositoryImpl implements TransactionRepository {
 
@@ -30,24 +32,20 @@ public class TransactionRepositoryImpl implements TransactionRepository {
 	}
 
 	@Override
-	public Transaction addTransaction(Transaction transaction) {
+	public Transaction addTransaction() {
 		// TODO Auto-generated method stub
+		AccountService accountService = new AccountServiceImpl();
 		Scanner sc = new Scanner (System.in);
 		System.out.println("ENTER TRANSACTION ID : ");
-		String tnxid = sc.next();
+		String tnxId = sc.next();
 		System.out.println("ENTER FROM ACCOUNT : ");
-		String fromAccId= sc.nextLine();
-		Account fromAccount = AccountRepository.displayAccountById(fromAccId);
-		System.out.println("ENTER TO ACCOUNT");
-		String toAccId =sc.nextLine();
-		Account toAccount = AccountRepository.displayAccountById(toAccId);
 		System.out.println("ENTER CHANNEL : ");
-		String channel = sc.next().toUpperCase();
+		Channel channel = Channel.valueOf(sc.next().toUpperCase());
 		System.out.println("ENTER STATUS : ");
-		String status = sc.next();
+		TransactionState status = TransactionState.valueOf(sc.next().toUpperCase());
 		System.out.println("ENTER AMOUNT : ");
 		Double tnxAmount = sc.nextDouble();
-		return new Transaction(tnxid, null, null, status, channel,tnxAmount);
+		return new Transaction(tnxId, null, null, tnxAmount, channel,status);
 		
 	}
 
