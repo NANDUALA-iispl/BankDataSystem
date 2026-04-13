@@ -1,5 +1,12 @@
 package com.bank.repository;
 
-public interface AccountRepository {
+import java.util.List;
 
+import com.bank.model.Account;
+
+public interface AccountRepository {
+	void displayAllAccounts(List<Account> accountList);
+	void addAccount(Account account);
+	Account displayAccountById(String accountId, List<Account> accountList);
+	
 }
