@@ -2,18 +2,20 @@ package com.bank.model;
 
 import java.util.List;
 
+import com.bank.enums.AccountType;
+
 public class Account {
 
 	private String accNo;
 	private String accHolderName;
 	private String accId;
-	private String accType;
+	private AccountType accType;
 	private Double accBalance;
-	private String accStatus;
+	private boolean accStatus;
 	private List<Transaction> transactionList;
 
-	public Account(String accNo, String accHolderName, String accId, String accType, Double accBalance,
-			String accStatus, List<Transaction> transactionList) {
+	public Account(String accNo, String accHolderName, String accId, AccountType accType, Double accBalance,
+			boolean accStatus, List<Transaction> transactionList) {
 
 		this.accNo = accNo;
 		this.accHolderName = accHolderName;
@@ -36,11 +38,11 @@ public class Account {
 		return accId;
 	}
 
-	public String getAccType() {
+	public AccountType getAccType() {
 		return accType;
 	}
 
-	public void setAccType(String accType) {
+	public void setAccType(AccountType accType) {
 		this.accType = accType;
 	}
 
@@ -52,11 +54,11 @@ public class Account {
 		this.accBalance = accBalance;
 	}
 
-	public String getAccStatus() {
+	public boolean getAccStatus() {
 		return accStatus;
 	}
 
-	public void setAccStatus(String accStatus) {
+	public void setAccStatus(boolean accStatus) {
 		this.accStatus = accStatus;
 	}
 
