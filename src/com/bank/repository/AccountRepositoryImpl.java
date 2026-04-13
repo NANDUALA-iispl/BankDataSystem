@@ -40,8 +40,7 @@ public class AccountRepositoryImpl implements AccountRepository{
 
 	}
 
-	@Override
-	public Account displayAccountById(String accountId,List<Account> accountList) {
+	public static Account displayAccountById(String accountId,List<Account> accountList) {
 		// TODO Auto-generated method stub
 		for(Account acc : accountList) {
 			if(acc.getAccId().equals(accountId)) {
