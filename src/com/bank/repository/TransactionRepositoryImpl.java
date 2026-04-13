@@ -37,8 +37,7 @@ public class TransactionRepositoryImpl implements TransactionRepository {
 		AccountService accountService = new AccountServiceImpl();
 		Scanner sc = new Scanner (System.in);
 		System.out.println("ENTER TRANSACTION ID : ");
-		String tnxId = sc.next();
-		System.out.println("ENTER FROM ACCOUNT : ");
+		String tnxId = sc.nextLine();
 		System.out.println("ENTER CHANNEL : ");
 		Channel channel = Channel.valueOf(sc.next().toUpperCase());
 		System.out.println("ENTER STATUS : ");
