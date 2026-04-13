@@ -1,6 +1,7 @@
 package com.bank.model;
 
 import com.bank.enums.Channel;
+import com.bank.enums.TransactionState;
 
 public class Transaction {
 
@@ -9,10 +10,12 @@ public class Transaction {
 	private Account toAcc;
 	private Double tnxAmount;
 	private Channel channel;
-	private String tnxStatus;
+
+	private TransactionState tnxStatus;
+	
 
 	public Transaction(String tnxId, Account fromAcc, Account toAcc, Double tnxAmount, Channel channel,
-			String tnxStatus) {
+			TransactionState tnxStatus) {
 
 		this.tnxId = tnxId;
 		this.fromAcc = fromAcc;
@@ -42,7 +45,7 @@ public class Transaction {
 		return channel;
 	}
 
-	public String getTnxStatus() {
+	public TransactionState getTnxStatus() {
 		return tnxStatus;
 	}
 
